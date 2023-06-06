@@ -14,7 +14,10 @@ public class JdkDynamicProxyTest {
         TimeInvocationHandler handler = new TimeInvocationHandler(target);
 
         //동적으로 프록시 생성
-        AInterface proxy = (AInterface) Proxy.newProxyInstance(AInterface.class.getClassLoader(), new Class[]{AInterface.class}, handler);
+        AInterface proxy
+                = (AInterface) Proxy.newProxyInstance(AInterface.class.getClassLoader(),
+                new Class[]{AInterface.class},
+                handler);
         
 
         proxy.call();
